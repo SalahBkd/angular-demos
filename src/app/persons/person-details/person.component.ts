@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-person',
@@ -7,4 +7,11 @@ import {Component, Input} from '@angular/core';
 })
 export class PersonComponent  {
   @Input() person = {name: '', email: '', age: 0};
+  @Output() delete = new EventEmitter();
+
+  onDelete() {
+    console.log('deleted');
+    this.delete.emit(this.person);
+  }
+
 }

@@ -1,2 +1,2 @@
 <p>List Of Persons</p>
-<app-person *ngFor="let person of persons" [person]="person"></app-person>
+<app-person *ngFor="let person of persons" [person]="person" (delete)="onPersonDelete($event)"></app-person>
