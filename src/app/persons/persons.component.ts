@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class PersonsComponent {
   persons = [
-    {name: 'salah', email: 'salahbkd@gmail.com', age: 18},
-    {name: 'ousama', email: 'ousama@gmail.com', age: 20},
-    {name: 'yusuf', email: 'yusuf@gmail.com', age: 15},
+    {name: 'salah', email: 'salahbkd@gmail.com', age: 18, isEmployed: true},
+    {name: 'ousama', email: 'ousama@gmail.com', age: 20, isEmployed: false},
+    {name: 'yusuf', email: 'yusuf@gmail.com', age: 15, isEmployed: true},
   ];
 
   onPersonDelete(person) {

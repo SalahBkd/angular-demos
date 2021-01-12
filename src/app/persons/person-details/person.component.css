@@ -1,3 +1,13 @@
-.persons {
-  border: 1px solid orange;
+.red {
+  border: 1px solid red;
+  margin: 10px;
+}
+
+.green {
+  border: 1px solid green;
+  margin: 10px;
+}
+
+.is-employed {
+  background: aqua;
 }

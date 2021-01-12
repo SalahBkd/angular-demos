@@ -6,7 +6,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
   styleUrls: ['./person.component.css']
 })
 export class PersonComponent  {
-  @Input() person = {name: '', email: '', age: 0};
+  @Input() person = {name: '', email: '', age: 0, isEmployed: false};
   @Output() delete = new EventEmitter();
 
   onDelete() {
