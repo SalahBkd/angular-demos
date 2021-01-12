@@ -11,3 +11,8 @@
 .is-employed {
   background: aqua;
 }
+
+.is-mouse-hovering {
+  background: aqua;
+  cursor: pointer;
+}

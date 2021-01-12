@@ -1,5 +1,5 @@
 <div (click)="onDelete()" [ngClass]="{red: person.age <= 17, green: person.age >= 18}">
-  <p>Name: {{person.name}}</p>
+  <p>Name: {{person.name | titlecase}}</p>
   <p>Email: {{person.email}}</p>
   <p>Age: {{person.age}}</p>
   <p *ngIf="person.age >= 18">Mature</p>
