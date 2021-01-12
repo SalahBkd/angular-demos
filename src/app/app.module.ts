@@ -6,7 +6,7 @@ import { PersonsComponent } from './persons/persons.component';
 import { PersonComponent } from './persons/person-details/person.component';
 import {EmployedDirective} from './persons/emplyed.directive';
 import {GenderListPipe} from './persons/genderList.pipe';
-import {FormsModule} from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
 import { PersonFormComponent } from './persons/person-form/person-form.component';
 
 @NgModule({
@@ -20,7 +20,7 @@ import { PersonFormComponent } from './persons/person-form/person-form.component
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
