@@ -1,0 +1,13 @@
+<h2>Add Person</h2>
+<form #personForm="ngForm" (ngSubmit)="onSubmit(personForm.value)" >
+  <labe for="name">Name: </labe>
+  <input type="text" name="name" id="name" ngModel>
+  <labe for="email">Email: </labe>
+  <input type="text" name="email" id="email" ngModel>
+  <label for="gender">Select Gender:</label>
+  <select name="gender" id="gender" ngModel>
+    <option value="Male">Male</option>
+    <option value="Male">Female</option>
+  </select>
+  <button type="submit">Add</button>
+</form>
