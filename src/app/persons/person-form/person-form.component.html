@@ -2,12 +2,20 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" >
   <labe for="name">Name: </labe>
   <input type="text" name="name" id="name" formControlName="name">
+
   <labe for="email">Email: </labe>
   <input type="text" name="email" id="email" formControlName="email">
+
+  <label for="age">Age:</label>
+  <input type="text" name="age" id="age" formControlName="age">
+  <div *ngIf="form.get('age').errors as ageErros" class="error">
+    Age must between {{ageErros.year.min}} and {{ageErros.year.max}}
+  </div>
+
   <label for="gender">Select Gender:</label>
   <select name="gender" id="gender" formControlName="gender">
     <option value="Male">Male</option>
     <option value="Male">Female</option>
   </select>
-  <button type="submit">Add</button>
+  <button type="submit" [disabled]="!form.valid">Add</button>
 </form>
