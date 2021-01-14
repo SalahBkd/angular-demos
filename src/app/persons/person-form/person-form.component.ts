@@ -1,5 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Component, Inject, OnInit} from '@angular/core';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {PersonService} from '../person.service';
+import {lookupListsToken} from '../providers';
 
 @Component({
   selector: 'app-person-form',
@@ -9,15 +11,19 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 export class PersonFormComponent implements OnInit {
   form: FormGroup;
 
+  constructor(private formBuilder: FormBuilder,
+              private personService: PersonService,
+              @Inject(lookupListsToken) public lookupLists) {}
+
   ngOnInit() {
-    this.form = new FormGroup({
-      name: new FormControl('', Validators.compose([
+    this.form = this.formBuilder.group({
+      name: this.formBuilder.control('', Validators.compose([
         Validators.required,
         Validators.pattern('[\\w\\-\\s\\/]+')
       ])),
-      email: new FormControl(''),
-      gender: new FormControl('Male'),
-      age: new FormControl('', this.ageValidator),
+      email: this.formBuilder.control(''),
+      gender: this.formBuilder.control('Male'),
+      age: this.formBuilder.control('', this.ageValidator),
     });
 
   }
@@ -42,6 +48,7 @@ export class PersonFormComponent implements OnInit {
   }
 
   onSubmit(person) {
-    console.log(person);
+    //console.log(person);
+    this.personService.add(person);
   }
 }

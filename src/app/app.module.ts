@@ -8,6 +8,8 @@ import {EmployedDirective} from './persons/emplyed.directive';
 import {GenderListPipe} from './persons/genderList.pipe';
 import {ReactiveFormsModule} from '@angular/forms';
 import { PersonFormComponent } from './persons/person-form/person-form.component';
+import {lookupLists, lookupListsToken} from './persons/providers';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { PersonFormComponent } from './persons/person-form/person-form.component
     BrowserModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {provide: lookupListsToken, useValue: lookupLists}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

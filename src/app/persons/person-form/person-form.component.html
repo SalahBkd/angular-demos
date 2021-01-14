@@ -1,9 +1,9 @@
 <h2>Add Person</h2>
 <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" >
-  <labe for="name">Name: </labe>
+  <label for="name">Name: </label>
   <input type="text" name="name" id="name" formControlName="name">
 
-  <labe for="email">Email: </labe>
+  <label for="email">Email: </label>
   <input type="text" name="email" id="email" formControlName="email">
 
   <label for="age">Age:</label>
@@ -14,8 +14,7 @@
 
   <label for="gender">Select Gender:</label>
   <select name="gender" id="gender" formControlName="gender">
-    <option value="Male">Male</option>
-    <option value="Male">Female</option>
+    <option *ngFor="let gender of lookupLists.genders" [value]="gender">{{gender}}</option>
   </select>
   <button type="submit" [disabled]="!form.valid">Add</button>
 </form>

@@ -1,18 +1,23 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {PersonService} from './person.service';
 
 @Component({
   selector: 'app-persons',
   templateUrl: './persons.component.html',
   styleUrls: ['./persons.component.css']
 })
-export class PersonsComponent {
-  persons = [
-    {name: 'salah eddine boukadi', email: 'salahbkd@gmail.com', age: 18, isEmployed: true, gender: 'male'},
-    {name: 'ousama attouch', email: 'ousama@gmail.com', age: 20, isEmployed: false, gender: 'male'},
-    {name: 'hanan attouch', email: 'yusuf@gmail.com', age: 15, isEmployed: true, gender: 'female'},
-  ];
+export class PersonsComponent implements OnInit {
+
+  persons = [];
+
+  constructor(private personService: PersonService) {
+  }
+
+  ngOnInit() {
+    this.persons = this.personService.get();
+  }
 
   onPersonDelete(person) {
-    console.log(person);
+    this.personService.delete(person);
   }
 }
