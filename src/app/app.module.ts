@@ -9,6 +9,9 @@ import {GenderListPipe} from './persons/genderList.pipe';
 import {ReactiveFormsModule} from '@angular/forms';
 import { PersonFormComponent } from './persons/person-form/person-form.component';
 import {lookupLists, lookupListsToken} from './persons/providers';
+import {HttpClientModule} from '@angular/common/http';
+import { UsersComponent } from './users/users.component';
+import {UsersService} from './users/users.service';
 
 
 @NgModule({
@@ -18,14 +21,17 @@ import {lookupLists, lookupListsToken} from './persons/providers';
     PersonComponent,
     EmployedDirective,
     GenderListPipe,
-    PersonFormComponent
+    PersonFormComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
-    {provide: lookupListsToken, useValue: lookupLists}
+    {provide: lookupListsToken, useValue: lookupLists},
+    UsersService
   ],
   bootstrap: [AppComponent]
 })
