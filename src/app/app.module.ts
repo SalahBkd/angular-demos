@@ -14,6 +14,8 @@ import { UsersComponent } from './users/users.component';
 import {UsersService} from './users/users.service';
 import { HomeComponent } from './home/home.component';
 import {routing} from './app.routing';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { UserDetailsComponent } from './users/user-details/user-details.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import {routing} from './app.routing';
     GenderListPipe,
     PersonFormComponent,
     UsersComponent,
-    HomeComponent
+    HomeComponent,
+    NotfoundComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
