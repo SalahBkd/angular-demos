@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Observable} from 'rxjs';
+import {fromEvent, Observable} from 'rxjs';
 import {filter, map} from 'rxjs/operators';
 
 @Component({
@@ -8,6 +8,7 @@ import {filter, map} from 'rxjs/operators';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, OnDestroy {
+  // BASIC OBSERVABLES MANIPLUATION
   private obervable$;
 
   ngOnInit(): void {
@@ -19,11 +20,11 @@ export class AppComponent implements OnInit, OnDestroy {
     });
 
     // BASIC SUBSCRIPTION
-    /*this.obervable$.subscribe(
+    this.obervable$.subscribe(
       value => console.log(value),
       err => console.log(err),
     () => console.log('completed')
-    );*/
+    );
 
     // SUBSCRIPTION WITH OPERATORS
     this.obervable$.pipe(
@@ -36,7 +37,20 @@ export class AppComponent implements OnInit, OnDestroy {
     console.log('destroyed');
     this.obervable$.unsubscribe();
   }
+  /*
+  // OBSERVABLE FROM A CLICK EVENT
+  private eventObservable$ = fromEvent(document, 'click');
+
+
+  ngOnInit(): void {
+    this.eventObservable$.subscribe(value => console.log(value));
+  }
+
+
+  ngOnDestroy(): void {
+  }*/
 
 
 
 }
+
