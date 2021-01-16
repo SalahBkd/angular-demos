@@ -12,6 +12,8 @@ import {lookupLists, lookupListsToken} from './persons/providers';
 import {HttpClientModule} from '@angular/common/http';
 import { UsersComponent } from './users/users.component';
 import {UsersService} from './users/users.service';
+import { HomeComponent } from './home/home.component';
+import {routing} from './app.routing';
 
 
 @NgModule({
@@ -22,12 +24,14 @@ import {UsersService} from './users/users.service';
     EmployedDirective,
     GenderListPipe,
     PersonFormComponent,
-    UsersComponent
+    UsersComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    routing
   ],
   providers: [
     {provide: lookupListsToken, useValue: lookupLists},

@@ -1,3 +1,4 @@
 <p>Genders: {{persons | genderList }}</p>
 <p>List Of Persons</p>
+<app-person-form></app-person-form>
 <app-person *ngFor="let person of persons" [person]="person" (delete)="onPersonDelete($event)"></app-person>
