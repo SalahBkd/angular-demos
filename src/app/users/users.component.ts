@@ -10,6 +10,8 @@ export class UsersComponent implements OnInit {
 
   public users = [];
   username = '';
+  isError = false;
+  errorMessage = '';
 
   constructor(private usersService: UsersService) { }
 
@@ -25,7 +27,9 @@ export class UsersComponent implements OnInit {
 
   getAllUsers() {
     this.usersService.getAllUsers()
-      .subscribe(users => this.users = users, error => console.log(error));
+      .subscribe(users => this.users = users, error => {
+        console.log(error);
+      });
   }
 
 }
