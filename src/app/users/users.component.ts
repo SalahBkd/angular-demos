@@ -9,12 +9,24 @@ import {UsersService} from './users.service';
 export class UsersComponent implements OnInit {
 
   public users = [];
+  username = '';
 
   constructor(private usersService: UsersService) { }
 
   ngOnInit() {
-    this.usersService.getUsers()
-      .subscribe(res => this.users = res);
+    this.getAllUsers();
+    this.getUsers(this.username);
+  }
+
+  getUsers(username) {
+    this.username = username;
+    this.usersService.getSingleUser(this.username)
+      .subscribe(users => this.users = users, error => console.log(error));
+  }
+
+  getAllUsers() {
+    this.usersService.getAllUsers()
+      .subscribe(users => this.users = users, error => console.log(error));
   }
 
 }

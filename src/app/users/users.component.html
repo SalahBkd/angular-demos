@@ -1,6 +1,10 @@
 <h2>Users from JSON API</h2>
+<button (click)="getAllUsers()">Get All Users</button>
+<button (click)="getUsers('Bret')">Get Single User</button>
 <div *ngFor="let user of users" style="border: 1px solid lightblue; margin: 10px">
   <p>id: {{user.id}}</p>
   <p>name: {{user.name}}</p>
   <p>email: {{user.email}}</p>
 </div>
+
+
