@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 import {routing} from './app.routing';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { UserDetailsComponent } from './users/user-details/user-details.component';
+import { StyledcomponentComponent } from './styledcomponent/styledcomponent.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { UserDetailsComponent } from './users/user-details/user-details.componen
     UsersComponent,
     HomeComponent,
     NotfoundComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    StyledcomponentComponent
   ],
   imports: [
     BrowserModule,
