@@ -12,3 +12,5 @@ Code samples of essential Angular topics.
 - Routing
 - RXJS Basics
 - Styling Components
+
+Note: each topic code sample corresponds to a branch.
